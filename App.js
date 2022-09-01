@@ -14,12 +14,16 @@ const image = require("./assets/background.jpg");
 
 export default function App() {
   return (
-    <View style={styles.container}>
-      <ImageBackground source={image} style={styles.image}>
+    <ImageBackground source={image} style={styles.image}>
+      <View style={styles.logoImage}>
         <Image source={require("./assets/logo-red.png")} style={styles.logo} />
         <Text>Sell what You don't need</Text>
-      </ImageBackground>
-    </View>
+      </View>
+      <View>
+        <View style={styles.red} />
+        <View style={styles.blue} />
+      </View>
+    </ImageBackground>
   );
 }
 
@@ -33,10 +37,27 @@ const styles = StyleSheet.create({
     flex: 1,
     alignItems: 'center',
     paddingTop: 50,
+    justifyContent: 'space-between',
+  },
+
+  logoImage: {
+    alignItems: 'center',
   },
 
   logo: {
     width: 100,
     height: 100,
+  },
+
+  red: {
+    backgroundColor: 'red',
+    width: '100vw',
+    height: 50,
+  },
+
+  blue: {
+    backgroundColor: 'blue',
+    width: '100vw',
+    height: 50,
   }
 });
