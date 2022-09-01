@@ -1,11 +1,24 @@
-import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, Text, View } from 'react-native';
+import {
+  StyleSheet,
+  Text,
+  TouchableOpacity,
+  Button,
+  Image,
+  SafeAreaView,
+  View,
+  ImageBackground,
+} from 'react-native';
+
+
+const image = require("./assets/background.jpg"); 
 
 export default function App() {
   return (
     <View style={styles.container}>
-      <Text>Open up App.js to start working on your app!</Text>
-      <StatusBar style="auto" />
+      <ImageBackground source={image} style={styles.image}>
+        <Image source={require("./assets/logo-red.png")} style={styles.logo} />
+        <Text>Sell what You don't need</Text>
+      </ImageBackground>
     </View>
   );
 }
@@ -14,7 +27,16 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
     backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
   },
+
+  image: {
+    flex: 1,
+    alignItems: 'center',
+    paddingTop: 50,
+  },
+
+  logo: {
+    width: 100,
+    height: 100,
+  }
 });
